@@ -12,11 +12,11 @@ namespace lesson1
             Write("Frist Name: ");
 
             // wait  insert user a name
-            string name = Console.ReadLine();
+            string name = ReadLine();
             //write  in console 
             Write("Your birth year:");
             // wait the user year and convert string to int.
-            int year = int.Parse(Console.ReadLine());
+            int year = int.Parse(ReadLine());
             // calculate the age
             int age = 2022 - year;
             
