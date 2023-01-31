@@ -14,7 +14,7 @@ namespace lesson2
             string num3_string = null;
 
             WriteLine("Fill in the request below !!!");
-            // wait the user insert a number
+            // wait the user insert a int no null
             do{
 
                 Write("Number 1: ");
