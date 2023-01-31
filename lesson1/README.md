@@ -3,17 +3,50 @@
 
 * This Program calculate your age based in your birth year.
 
+#### Variables:
+```c#
+string name;
+int year;
+string year_string;
+```
+
 #### Request name of user:
 ```c#
-Write("Frist Name: ");
-string name = ReadLine();
+// wait  insert user a name different the null
+do {
+                
+    Write("Frist Name: ");
+                
+    //get input
+    name = ReadLine();
+                
+    // erro mensage
+    if(string.IsNullOrEmpty(name))
+        WriteLine("Invalid");
+            
+}while(string.IsNullOrEmpty(name));
 ```
 
 #### Request birth year of user:
 ```c#
-Write("Your birth year:");
-// wait the user year and convert string to int.
-int year = int.Parse(ReadLine());
+do{
+                
+    //write  in console 
+    Write("Your birth year:");
+                
+    //get input
+    year_string = ReadLine();
+
+    // erro mensage
+    if(string.IsNullOrEmpty(year_string))
+        WriteLine("Invalid");
+                
+}while(string.IsNullOrEmpty(year_string));
+```
+
+#### Convert string to int:
+```c#
+year = int.Parse(year_string);
 ```
 
 #### Calculate age of user:
