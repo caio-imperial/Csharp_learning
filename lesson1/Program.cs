@@ -20,6 +20,7 @@ namespace lesson1
 
             // call method to request birth year
             age = person.calculate_age();
+
             //write in console
             WriteLine($"\nHi {name}!");
             WriteLine($"Your age is: {age}");
@@ -61,22 +62,19 @@ namespace lesson1
         }
         public int calculate_age(){
             bool error = true;
-            do
-            {
-                try
-                {
+            do{
+                try{
                     //write  in console
                     Write("Your birth year:");
                     //get input
                     year = int.Parse(ReadLine());
                     error = false;
-                }
-                catch
-                {
+                }catch{
                     // erro mensage
                     WriteLine("Invalid");
                 }
             } while (error == true);
+
             age =  year_now - year;
 
             return age;

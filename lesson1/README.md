@@ -5,30 +5,36 @@
 
 #### Variables:
 ```c#
+//variables
 string name;
-int year = 0;
+int age = 0;
+
+// call the class and instanse object
+Person_Console person = new Person_Console();
+```
+
+#### Request name and birth year:
+```c#
+// write in console
+WriteLine("Fill in the request below !!!\n");
+// call method to request name
+name = person.first_name();
+
+// call method to request birth year
+age = person.calculate_age();
+```
+
+#### Declarate variables in class Person_Console:
+```c#
+private int year_now = DateTime.Now.Year;
+private string name;
+private int year;
+private int age;
+```
+
+#### Method calculate_age, return int:
+```c#
 bool error = true;
-```
-
-#### Request name of user:
-```c#
-// wait  insert user a name different the null
-do {
-
-    Write("Frist Name: ");
-
-    //get input
-    name = ReadLine();
-
-    // erro mensage
-    if(string.IsNullOrEmpty(name))
-        WriteLine("Invalid");
-
-}while(string.IsNullOrEmpty(name));
-```
-
-#### Request birth year of user:
-```c#
 do{
     try{
         //write  in console
@@ -36,17 +42,34 @@ do{
         //get input
         year = int.Parse(ReadLine());
         error = false;
-    }
-    catch{
+    }catch{
         // erro mensage
         WriteLine("Invalid");
     }
-}while(error == true);
+} while (error == true);
+
+age =  year_now - year;
+
+return age;
 ```
 
-#### Calculate age of user:
+#### Method first_name, return string:
 ```c#
-int age = 2022 - year;
+// wait  insert user a name different the null
+do{
+
+    Write("First Name: ");
+
+    //get input
+    name = ReadLine();
+
+    // erro mensage
+    if (string.IsNullOrEmpty(name))
+        WriteLine("Invalid");
+
+} while (string.IsNullOrEmpty(name));
+
+return name;
 ```
 
 #### code for generate Output:
