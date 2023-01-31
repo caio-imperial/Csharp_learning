@@ -1,4 +1,4 @@
-﻿// Program ask your name and birth year than show 'Hi {Your name}' after 'Your age is: {yout age}'
+﻿// Program calculate your age based in birth year
 using static System.Console;
 
 namespace lesson1
@@ -6,61 +6,78 @@ namespace lesson1
     class Program
     {
         static void Main(string[] args)
-        {   
+        {
             //variables
             string name;
-            int year;
-            string year_string;
-            
+            int age = 0;
+
+            // call the class
+            Person_Console person = new Person_Console();
             // write in console
             WriteLine("Fill in the request below !!!\n");
-            
-            // wait  insert user a name different the null
-            do {
-                
-                Write("Frist Name: ");
-                
-                //get input
-                name = ReadLine();
-                
-                // erro mensage
-                if(string.IsNullOrEmpty(name))
-                    WriteLine("Invalid");
-            
-            }while(string.IsNullOrEmpty(name));
-            do{
-                
-                //write  in console 
-                Write("Your birth year:");
-                
-                //get input
-                year_string = ReadLine();
+            // call method to request name
+            name = person.first_name();
 
-                // erro mensage
-                if(string.IsNullOrEmpty(year_string))
-                    WriteLine("Invalid");
-                
-            }while(string.IsNullOrEmpty(year_string));
-            
-            // convert string to int
-            year = int.Parse(year_string);
+            // call method to request birth year
+            age = person.calculate_age();
 
-            // calculate the age
-            int age = 2022 - year;
-            
             //write in console
             WriteLine($"\nHi {name}!");
             WriteLine($"Your age is: {age}");
-            
+
             //check if age is over 21
             if( age >= 21 )
             {
                 WriteLine("To be over 21 \n");
             }
-            else 
+            else
             {
                 WriteLine("To be under 21 \n");
             }
+        }
+    }
+    // class for validate name and year insert for user
+    public class Person_Console{
+        private int year_now = DateTime.Now.Year;
+        private string name;
+        private int year;
+        private int age;
+        private bool error = true;
+        public string first_name()
+        {
+            // wait  insert user a name different the null
+            do{
+
+                Write("First Name: ");
+
+                //get input
+                name = ReadLine();
+
+                // erro mensage
+                if (string.IsNullOrEmpty(name))
+                    WriteLine("Invalid");
+
+            } while (string.IsNullOrEmpty(name));
+            return name;
+        }
+        public int calculate_age(){
+            bool error = true;
+            do{
+                try{
+                    //write  in console
+                    Write("Your birth year:");
+                    //get input
+                    year = int.Parse(ReadLine());
+                    error = false;
+                }catch{
+                    // erro mensage
+                    WriteLine("Invalid");
+                }
+            } while (error == true);
+
+            age =  year_now - year;
+
+            return age;
         }
     }
 }

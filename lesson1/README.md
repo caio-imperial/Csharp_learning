@@ -3,55 +3,14 @@
 
 * This Program calculate your age based in your birth year.
 
-#### Variables:
+#### Variables and Create Object:
 ```c#
+//variables
 string name;
-int year;
-string year_string;
-```
+int age = 0;
 
-#### Request name of user:
-```c#
-// wait  insert user a name different the null
-do {
-
-    Write("Frist Name: ");
-
-    //get input
-    name = ReadLine();
-
-    // erro mensage
-    if(string.IsNullOrEmpty(name))
-        WriteLine("Invalid");
-
-}while(string.IsNullOrEmpty(name));
-```
-
-#### Request birth year of user:
-```c#
-do{
-
-    //write  in console
-    Write("Your birth year:");
-
-    //get input
-    year_string = ReadLine();
-
-    // erro mensage
-    if(string.IsNullOrEmpty(year_string))
-        WriteLine("Invalid");
-
-}while(string.IsNullOrEmpty(year_string));
-```
-
-#### Convert string to int:
-```c#
-year = int.Parse(year_string);
-```
-
-#### Calculate age of user:
-```c#
-int age = 2022 - year;
+// call the class and instanse object
+Person_Console person = new Person_Console();
 ```
 
 #### code for generate Output:
@@ -78,14 +37,39 @@ To be over 21 or To be under 21
 
 ```
 
+#### Request name and birth year:
+```c#
+// write in console
+WriteLine("Fill in the request below !!!\n");
+// call method to request name
+name = person.first_name();
+
+// call method to request birth year
+age = person.calculate_age();
+```
+
+#### Declarate variables in class Person_Console:
+```c#
+private int year_now = DateTime.Now.Year;
+private string name;
+private int year;
+private int age;
+```
+
+#### Method first_name, return string:
+```c#
+public string first_name()
+```
+this method write in console and wait the user insert first name
+
+#### Method calculate_age, return int:
+```c#
+public int calculate_age()
+```
+this method write in console and wait the user insert birth year
 
 ![icons](https://skills.thijs.gg/icons?i=c,&theme=light)
 
-
-
-
-
-## Author
+## Autores
 
 - [@caiosilvestre](https://github.com/caiosilvestre/)
-

@@ -7,29 +7,26 @@
 int num1 = 0;
 int num2 = 0;
 int num3 = 0;
-string num1_string = null;
-string num2_string = null;
-string num3_string = null;
 ```
 
 #### Request numbers:
 ```c#
-// wait the user insert a int no null
+// wait the user insert a int
 do{
-
-    Write("Number 1: ");
-    num1_string = ReadLine();
-    if (string.IsNullOrEmpty(num1_string))
-        WriteLine("Invalid");
-
-} while (string.IsNullOrEmpty(num1_string));
+    try{
+        Write("Number 1: ");
+        num1 = int.Parse(ReadLine());
+        erro = false;
+    }
+    catch{
+            WriteLine("Invalid number");
+    }
+} while (erro == true);
 ```
-#### Convert string to int:
+
+#### Reset erro:
 ```c#
-//convert string to int
-num1 = int.Parse(num1_string);
-num2 = int.Parse(num2_string);
-num3 = int.Parse(num3_string);
+erro = true;
 ```
 
 #### Sum:
