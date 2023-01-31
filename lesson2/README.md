@@ -50,3 +50,7 @@ Total: {sum}
 
 
 ![icons](https://skills.thijs.gg/icons?i=c,&theme=light)
+
+## Author
+
+- [@caiosilvestre](https://github.com/caiosilvestre/)
