@@ -6,47 +6,42 @@
 #### Variables:
 ```c#
 string name;
-int year;
-string year_string;
+int year = 0;
+bool error = true;
 ```
 
 #### Request name of user:
 ```c#
 // wait  insert user a name different the null
 do {
-                
+
     Write("Frist Name: ");
-                
+
     //get input
     name = ReadLine();
-                
+
     // erro mensage
     if(string.IsNullOrEmpty(name))
         WriteLine("Invalid");
-            
+
 }while(string.IsNullOrEmpty(name));
 ```
 
 #### Request birth year of user:
 ```c#
 do{
-                
-    //write  in console 
-    Write("Your birth year:");
-                
-    //get input
-    year_string = ReadLine();
-
-    // erro mensage
-    if(string.IsNullOrEmpty(year_string))
+    try{
+        //write  in console
+        Write("Your birth year:");
+        //get input
+        year = int.Parse(ReadLine());
+        error = false;
+    }
+    catch{
+        // erro mensage
         WriteLine("Invalid");
-                
-}while(string.IsNullOrEmpty(year_string));
-```
-
-#### Convert string to int:
-```c#
-year = int.Parse(year_string);
+    }
+}while(error == true);
 ```
 
 #### Calculate age of user:
@@ -64,7 +59,7 @@ if( age >= 21 )
 {
     WriteLine("To be over 21 \n");
 }
-else 
+else
 {
     WriteLine("To be under 21 \n");
 }
