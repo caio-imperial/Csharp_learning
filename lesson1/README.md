@@ -60,13 +60,13 @@ private int age;
 ```c#
 public string first_name()
 ```
-this method write in console and wait the user insert owner first name
+this method write in console and wait the user insert first name
 
 #### Method calculate_age, return int:
 ```c#
 public int calculate_age()
 ```
-this method write in console and wait the user insert owner birth year
+this method write in console and wait the user insert birth year
 
 ![icons](https://skills.thijs.gg/icons?i=c,&theme=light)
 
