@@ -14,33 +14,33 @@ string year_string;
 ```c#
 // wait  insert user a name different the null
 do {
-                
+
     Write("Frist Name: ");
-                
+
     //get input
     name = ReadLine();
-                
+
     // erro mensage
     if(string.IsNullOrEmpty(name))
         WriteLine("Invalid");
-            
+
 }while(string.IsNullOrEmpty(name));
 ```
 
 #### Request birth year of user:
 ```c#
 do{
-                
-    //write  in console 
+
+    //write  in console
     Write("Your birth year:");
-                
+
     //get input
     year_string = ReadLine();
 
     // erro mensage
     if(string.IsNullOrEmpty(year_string))
         WriteLine("Invalid");
-                
+
 }while(string.IsNullOrEmpty(year_string));
 ```
 
@@ -64,7 +64,7 @@ if( age >= 21 )
 {
     WriteLine("To be over 21 \n");
 }
-else 
+else
 {
     WriteLine("To be under 21 \n");
 }
@@ -85,7 +85,7 @@ To be over 21 or To be under 21
 
 
 
-## Autores
+## Author
 
 - [@caiosilvestre](https://github.com/caiosilvestre/)
 

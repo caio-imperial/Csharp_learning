@@ -21,7 +21,7 @@ int sum = num1 + num2 + num3;
 ```c#
 // show the sum in console
 WriteLine($"{num1} + {num2} + {num3} = {sum}");
-            
+
 // show the total in cosole
 WriteLine($"Total: {sum}");
 ```
@@ -33,3 +33,7 @@ Total: {sum}
 
 
 ![icons](https://skills.thijs.gg/icons?i=c,&theme=light)
+
+## Author
+
+- [@caiosilvestre](https://github.com/caiosilvestre/)
