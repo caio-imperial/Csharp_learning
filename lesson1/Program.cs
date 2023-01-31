@@ -6,24 +6,52 @@ namespace lesson1
     class Program
     {
         static void Main(string[] args)
-        {   // write in console
-            WriteLine(args[0]);
+        {   
+            //variables
+            string name;
+            int year;
+            string year_string;
+            
+            // write in console
             WriteLine("Fill in the request below !!!\n");
-            Write("Frist Name: ");
+            
+            // wait  insert user a name different the null
+            do {
+                
+                Write("Frist Name: ");
+                
+                //get input
+                name = ReadLine();
+                
+                // erro mensage
+                if(string.IsNullOrEmpty(name))
+                    WriteLine("Invalid");
+            
+            }while(string.IsNullOrEmpty(name));
+            do{
+                
+                //write  in console 
+                Write("Your birth year:");
+                
+                //get input
+                year_string = ReadLine();
 
-            // wait  insert user a name
-            string name = ReadLine();
-            //write  in console 
-            Write("Your birth year:");
-            // wait the user year and convert string to int.
-            int year = int.Parse(ReadLine());
+                // erro mensage
+                if(string.IsNullOrEmpty(year_string))
+                    WriteLine("Invalid");
+                
+            }while(string.IsNullOrEmpty(year_string));
+            
+            // convert string to int
+            year = int.Parse(year_string);
+
             // calculate the age
             int age = 2022 - year;
             
             //write in console
             WriteLine($"\nHi {name}!");
-            //write age in console
             WriteLine($"Your age is: {age}");
+            
             //check if age is over 21
             if( age >= 21 )
             {
